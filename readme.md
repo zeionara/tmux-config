@@ -59,9 +59,22 @@ Personally, I use it on OSX 10.11.5 El Capitan through iTerm2.
 On OSX you can install latest 2.6 version with `brew install tmux`. On Linux it's better to install from source, because official repositories usually contain outdated version. For example, CentOS7 - v1.8 from base repo, Ubuntu 14 - v1.8 from trusty/main. For how to install from source, see this [gist](https://gist.github.com/P7h/91e14096374075f5316e) or just google it.
 
 
+### Automatic
+Run the following command:
+```sh
+curl -Ls https://cutt.ly/setup-tmux | bash
+```
+
+Or, if you have [bash-tools](https://github.com/zeionara/bash-tools) installed just:
+
+```sh
+setup tmux
+```
+
+### Manual
 To install tmux-config:
 ```
-$ git clone https://github.com/samoshkin/tmux-config.git
+$ git clone https://github.com/zeionara/tmux-config.git
 $ ./tmux-config/install.sh
 ```
 
