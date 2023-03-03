@@ -25,11 +25,11 @@ fi
 
 if [ -e "$HOME/.tmux.conf" ]; then
   printf "Found existing .tmux.conf in your \$HOME directory. Will create a backup at $HOME/.tmux.conf.bak\n"
-  mv "$HOME"/.tmux/tmux.remote.conf "$HOME"/.tmux/tmux.remote.conf.bak
 fi
 
 cp -f "$HOME/.tmux.conf" "$HOME/.tmux.conf.bak" 2>/dev/null || true
 cp -a ./tmux/. "$HOME"/.tmux/
+
 ln -sf .tmux/tmux.conf "$HOME"/.tmux.conf;
 
 rm "$HOME"/.tmux/tmux.conf || echo "No existing tmux config, skipping removal"
