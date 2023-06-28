@@ -30,12 +30,12 @@ fi
 cp -f "$HOME/.tmux.conf" "$HOME/.tmux.conf.bak" 2>/dev/null || true
 cp -a ./tmux/. "$HOME"/.tmux/
 
-ln -sf .tmux/tmux.conf "$HOME"/.tmux.conf;
+ln -sf .tmux/tmux.conf "$HOME/.tmux.conf"
 
 rm "$HOME"/.tmux/tmux.conf || echo "No existing tmux config, skipping removal"
-ln ./tmux/tmux.conf "$HOME"/.tmux/tmux.conf
+ln ./tmux/tmux.conf "$HOME/.tmux/tmux.conf"
 rm "$HOME"/.tmux/tmux.remote.conf || echo "No existing tmux config, skipping removal"
-ln ./tmux/tmux.remote.conf "$HOME"/.tmux/tmux.remote.conf
+ln ./tmux/tmux.remote.conf "$HOME/.tmux/tmux.remote.conf"
 
 # Install TPM plugins.
 # TPM requires running tmux server, as soon as `tmux start-server` does not work
