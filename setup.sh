@@ -1,17 +1,27 @@
 #!/bin/bash
 
-echo 'Checking if tmux is already installed...'
+echop () {
+    echo "🚩 $@"
+}
 
-tmux -V && echo 'Tmux is already installed, proceeding to the configuration...' || echo 'Installing tmux...' && sudo apt-get update && sudo apt-get install tmux
+echo '🏁 Installing tmux. Checking if it is already installed...'
 
-echo 'Installing widget dependencies...'
+if test -z $(which tmux); then
+    echop 'Installing tmux...'
+    sudo apt-get update
+    sudo apt-get install tmux -y || true
+else
+    echop 'Found existing tmux installation'
+fi
+
+echop 'Installing widget dependencies...'
 
 sudo apt-get update && sudo apt-get install gawk net-tools coreutils -y
 
-echo 'Getting tmux config repo...'
+echop 'Getting tmux config repo...'
 
 git clone https://github.com/zeionara/tmux-config.git $HOME/tmux-config
 
-echo 'Installing tmux config...'
+echop 'Installing tmux config...'
 
 $HOME/tmux-config/install.sh
