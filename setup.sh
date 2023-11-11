@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 echop () {
     echo "🚩 $@"
 }
@@ -37,4 +39,4 @@ git clone https://github.com/zeionara/tmux-config.git "$ROOT"
 
 echop 'Installing tmux config...'
 
-"$ROOT/install.sh"
+source "$ROOT/install.sh"
